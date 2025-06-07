@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>자기소개</title>
+    <style>
+        /* 전체 레이아웃 */
+        body {
+            background-color: #e0e8f0;
+            color: #333;
+            font-family: 'Helvetica Neue';
+            margin: 40px;
+        }
+        /* 소제목 강조 및 가운데 맞ㅜ*/
+        h2, h3, span {
+            text-align: center;
+        }
+
+        h2 {
+            color: #444;
+        }
+
+        /* 강조부분 색깔 및 폰트 크기, 여백 서정*/
+        span {
+            font-size: 50px;
+            color: #2c3e50;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* 밑줄 여백 및 색깔 설정 */
+        hr {
+            border: none;
+            height: 1px;
+            background: #ccc;
+            margin: 30px 0;
+        }
+
+        /* 프로필 이미지 */
+        img.profile {
+            display: block;
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid #aaa;
+            margin: 0 auto 30px;
+        }
+
+        /* 카드 스타일 공통 */
+        .box {
+            width: 400px;
+            background: #fff;
+            padding: 20px;
+            margin: 0 auto 30px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        dt {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        dd {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        /* 폼 스타일 */
+        .form-group {
+            margin: 15px 0;
+        }
+
+        
+        /* lable 설정 */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* input 설정*/
+        input[type="email"], input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        
+        /* 로그인 버튼 설정 값 */
+       .login_btn {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+       }
+
+       /* 회원가입 버튼 설정 값*/
+       .sign_in_btn {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+       }
+       
+       /* 모든 버튼 설정 값*/
+       button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+    </style>
+</head>
+<body>
+    <span>자기소개</span>
+    <hr>
+
+    <img src="LIM.jpg" alt="프로필 이미지" class="profile">
+
+    <div class="box">
+        <h2>취미</h2>
+        <dl>
+            <dd>
+                <ol>
+                    <li>낮잠자기</li>
+                    <li>강아지 산책</li>
+                    <li>유튜브 시청</li>
+                </ol>
+            </dd>
+        </dl>
+    </div>
+
+    <div class="box">
+        <h2>학교 관련</h2>
+        <dl>
+            <dd>
+                <ol>
+                    <li>학번: 2506005</li>
+                    <li>학교명: 한성대학교</li>
+                    <li>학부: 미래인재학부</li>
+                </ol>
+            </dd>
+        </dl>
+    </div>
+
+    <div class="box">
+        <h2>회사 관련</h2>
+        <dl>
+            <dd>
+                <form>
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" placeholder="이메일을 입력하세요">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">비밀번호</label>
+                        <input type="password" id="password" placeholder="********">
+                    </div>
+                    <div class="button-group">
+                        <a href="로그인 성공.html"><button type="button">로그인</button></a>
+                        <a href="회원가입 양식 수정 버전1.html"><button type="button">회원가입</button></a>
+                    </div>
+                </form>
+            </dd>
+        </dl>
+    </div>
+</body>
+</html>
