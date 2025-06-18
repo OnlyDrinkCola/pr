@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>회사인사기록카드</title>
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            padding: 30px;
+        }
 
+        h1 {
+            text-align: center;
+            color: #00796b;
+        }
+
+        .form-container {
+            max-width: 500px;
+            background: #ffffff;
+            padding: 25px;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px 20px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #004d40;
+        }
+
+        #preview, #clicker {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #00796b;
+        }
+    </style>
+    <script>
+        let clickCount = 0;
+
+        function check() {
+            let text = "가입 정보:\n";
+            text += "아이디 : " + document.corperation.id.value + "\n";
+            text += "비밀번호 : " + document.getElementsByName("pw")[0].value + "\n";
+            text += "이름 : " + document.getElementById("name").value + "\n";
+            text += "주소 : " + document.getElementsByClassName("address")[0].value + "\n";
+            alert(text);
+        }
+
+        function changeBackground() {
+            const colors = ["#ffe0b2", "#c8e6c9", "#b3e5fc", "#f8bbd0", "#d1c4e9"];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function livePreview(input) {
+            document.getElementById("preview").innerText = "입력 중: " + input.value;
+        }
+
+        function countClick(event) {
+            event.preventDefault();
+            clickCount++;
+            document.getElementById("clicker").innerText = "클릭 횟수: " + clickCount;
+        }
+    </script>
+</head>
+<body>
+    <h1>회사 인사 기록 카드</h1>
+    <div class="form-container">
+        <form name="corperation" action="">
+            <div class="form-group">
+                <label for="id">아이디</label>
+                <input type="text" name="id" value="20151803">
+            </div>
+            <div class="form-group">
+                <label for="pw">비밀번호</label>
+                <input type="password" name="pw" value="집가고 싶다">
+            </div>
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" value="임준수" onkeyup="livePreview(this)">
+            </div>
+            <div class="form-group">
+                <label for="address">주소</label>
+                <input type="text" class="address" name="address" value="충남 보령시">
+            </div>
+            <div class="form-group">
+                <button class="btn" onclick="check()" type="button">가입 정보 확인</button>
+                <button class="btn" ondblclick="location.href='my_pr.html'" type="button">초기화면으로</button>
+                <button class="btn" onmouseover="changeBackground()" type="button">배경색 변경</button>
+                <button class="btn" onclick="countClick(event)" type="button">총 클릭수</button>
+            </div>
+        </form>
+        <div id="preview"></div>
+        <div id="clicker">클릭 횟수: 0</div>
+    </div>
+</body>
+</html>
